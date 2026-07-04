@@ -5,7 +5,7 @@ public:
         if (n == 1) return nums[0];
         if (n == 2) return max(nums[0], nums[1]);
 
-        vector<int> dp(n, 0), adp(n, 0);
+        vector<int> dp(n), adp(n);
 
         // Case 1: houses 0..n-2
         dp[0] = nums[0];
@@ -25,4 +25,3 @@ public:
         return max(dp[n-2], adp[n-1]);
     }
 };
-

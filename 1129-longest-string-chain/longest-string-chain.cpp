@@ -19,7 +19,7 @@ public:
     int longestStrChain(vector<string>& words) {
         int n = words.size();
         sort(words.begin(), words.end(), myFunction);
-
+//lis part from here
         vector<int> t(n, 1);
         int maxL = 1;
 

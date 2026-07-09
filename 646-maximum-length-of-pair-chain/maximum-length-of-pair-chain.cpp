@@ -2,7 +2,7 @@ class Solution {
 public:
     int findLongestChain(vector<vector<int>>& nums) {
         int n = nums.size();
-        sort(nums.begin(), nums.end()); // sort by first element
+        sort(nums.begin(), nums.end()); 
 
         vector<int> t(n, 1);
         int maxL = 1;
@@ -11,7 +11,7 @@ public:
         {
             for (int j = 0; j < i; j++) 
             {
-                if (nums[j][1] < nums[i][0])
+                if (nums[j][1] < nums[i][0])// j[1] previous wala element should be less thant i[0] current wala element 
                 {
                     t[i] = max(t[i], t[j] + 1);
                 }

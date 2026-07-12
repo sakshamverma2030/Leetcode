@@ -24,9 +24,9 @@ public:
 
         // loop khol ke likha hai
         for (int i = 0; i < arr.size(); i++) {
-            int x = arr[i];
-            int rx = rank[x];
-            result.push_back(rx);
+            int x = arr[i];       // current element
+            int rx = rank[x];     // uska rank
+            result.push_back(rx); // ✅ add rank to result
         }
 
         return result;

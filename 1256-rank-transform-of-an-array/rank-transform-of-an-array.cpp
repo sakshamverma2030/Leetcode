@@ -8,17 +8,25 @@ public:
         // Step 2: assign ranks to unique elements
         unordered_map<int,int> rank;
         int r = 1;
-        for (int x : sortedArr) {
+
+        // loop khol ke likha hai
+        for (int i = 0; i < sortedArr.size(); i++) {
+            int x = sortedArr[i];
             if (rank.find(x) == rank.end()) {
-                rank[x] = r++;
+                rank[x] = r;
+                r = r + 1;
             }
         }
 
         // Step 3: build result using rank map
         vector<int> result;
         result.reserve(arr.size());
-        for (int x : arr) {
-            result.push_back(rank[x]);
+
+        // loop khol ke likha hai
+        for (int i = 0; i < arr.size(); i++) {
+            int x = arr[i];
+            int rx = rank[x];
+            result.push_back(rx);
         }
 
         return result;

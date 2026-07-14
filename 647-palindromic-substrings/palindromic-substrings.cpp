@@ -6,11 +6,11 @@ public:
         {
             return true;
         }
-        if(s[i]== s[j])
+        if(s[i] != s[j])
         {
-            return check(s, i+1, j-1);
+            return false;
         }
-        return false;
+        return check(s, i+1, j-1);
     }
 
     int countSubstrings(string s) 

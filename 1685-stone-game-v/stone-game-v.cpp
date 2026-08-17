@@ -1,15 +1,8 @@
-#include <vector>
-#include <numeric>
-#include <algorithm>
-
-using namespace std;
-
 class Solution {
 public:
     int stoneGameV(vector<int>& stoneValue) {
         int n = stoneValue.size();
-        
-        // Prefix sum array
+       
         vector<int> pref(n + 1, 0);
         for (int i = 0; i < n; ++i) {
             pref[i + 1] = pref[i] + stoneValue[i];
@@ -20,8 +13,6 @@ public:
         };
 
         vector<vector<int>> dp(n, vector<int>(n, 0));
-
-        // Iterate over length of the subarray
         for (int len = 2; len <= n; ++len) {
             for (int i = 0; i <= n - len; ++i) {
                 int j = i + len - 1;

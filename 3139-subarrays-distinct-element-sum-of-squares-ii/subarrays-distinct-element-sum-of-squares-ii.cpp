@@ -3,8 +3,8 @@ public:
     static constexpr long long MOD = 1000000007LL;
 
     struct Node {
-        long long sum = 0;   // sum of distinct counts
-        long long sq = 0;    // sum of squares
+        long long sum = 0;   
+        long long sq = 0;   
         long long lazy = 0;
     };
 
@@ -78,8 +78,6 @@ public:
             if (last.count(nums[i]))
                 prev = last[nums[i]];
 
-            // increase distinct count for all starts
-            // in [prev+1, i]
             update(1, 0, n - 1, prev + 1, i, 1);
 
             ans = (ans + seg[1].sq) % MOD;
